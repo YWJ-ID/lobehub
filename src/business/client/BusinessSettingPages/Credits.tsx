@@ -1,14 +1,10 @@
 'use client';
 
-import { isDesktop } from '@lobechat/const';
 import { memo } from 'react';
 
-import { SubscriptionIframeWrapper } from './SubscriptionIframeWrapper';
+import CreditRecharge from './CreditRecharge';
 
-const Credits = memo(() => {
-  if (!isDesktop) return null;
-  return <SubscriptionIframeWrapper page="credits" />;
-});
+const Credits = memo(() => <CreditRecharge />);
 
 Credits.displayName = 'Credits';
 export default Credits;

@@ -9,6 +9,7 @@ export * from './apiKey';
 export * from './asyncTask';
 export * from './betterAuth';
 export * from './chatGroup';
+export * from './credit';
 export * from './documentHistory';
 export * from './file';
 export * from './generation';

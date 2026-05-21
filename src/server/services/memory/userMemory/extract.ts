@@ -488,7 +488,7 @@ export const resolveRuntimeAgentConfig = (
       apiKey: userApiKey,
       baseURL: userBaseURL,
       userId: options?.userId,
-    });
+    }, hooks);
   }
 
   debugRuntimeInit(agent, {
@@ -502,7 +502,7 @@ export const resolveRuntimeAgentConfig = (
     apiKey: agent.apiKey || options?.fallback?.apiKey,
     baseURL: agent.baseURL || options?.fallback?.baseURL,
     userId: options?.userId,
-  });
+  }, hooks);
 };
 
 const logRuntime = debug('lobe-server:memory:user-memory:runtime');
@@ -2262,7 +2262,7 @@ export class MemoryExtractionExecutor {
       userId,
     };
 
-    const hooks = getBusinessModelRuntimeHooks(userId, 'lobehub');
+    const hooks = await getBusinessModelRuntimeHooks(userId, 'lobehub');
 
     const runtimes: RuntimeBundle = {
       embeddings: await resolveRuntimeAgentConfig(

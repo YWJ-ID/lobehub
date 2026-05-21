@@ -79,7 +79,7 @@ export class UserPersonaService {
       {} as ProviderKeyVaultMap,
     );
 
-    const hooks = getBusinessModelRuntimeHooks(payload.userId, 'lobehub');
+    const hooks = await getBusinessModelRuntimeHooks(payload.userId, 'lobehub');
 
     const runtime = await resolveRuntimeAgentConfig(
       { ...this.agentConfig },

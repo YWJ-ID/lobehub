@@ -420,7 +420,7 @@ export const initModelRuntimeFromDB = async (
   const payload = buildPayloadFromKeyVaults(keyVaults, runtimeProvider);
 
   // 4. Get business hooks (billing in cloud, undefined in OSS)
-  const hooks = getBusinessModelRuntimeHooks(userId, provider);
+  const hooks = await getBusinessModelRuntimeHooks(userId, provider);
 
   // 5. Initialize ModelRuntime with the payload and hooks
   return initModelRuntimeWithUserPayload(provider, payload, { userId }, hooks);
